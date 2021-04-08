@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <style>
+        body{
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<nav th:insert="fragments/navbar" :: nav_fragment></nav>
+
+<div class="card" style="width: 800px; margin-left: 500px">
+    <form th:action="@{/contact/post}"    method="post"  class="was-validated" style="padding: 20px;margin: 10px">
+        <div class="form-group">
+            <label for="test">Username:</label>
+            <input type="text" class="form-control" id="test" name="test" placeholder="Enter username"  >
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+
+<footer th:insert="fragments/footer :: footer_fragment"></footer>
+</body>
+</html>
