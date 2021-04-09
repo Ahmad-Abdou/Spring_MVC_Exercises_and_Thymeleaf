@@ -7,6 +7,8 @@
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet"   href="/css/stylesheet2.css">
+
     <style>
         body{
             padding-top: 100px;
@@ -16,19 +18,23 @@
 <body>
 <nav th:insert="fragments/navbar" :: nav_fragment></nav>
 
-<div class="card" style="width: 800px; margin-left: 500px">
-    <form th:action="@{/contact/post}"    method="post"  class="was-validated" style="padding: 20px;margin: 10px">
+<div class="bg-img">
+<!--<div class="card" style="width: 800px; margin-left: 500px">-->
+    <form th:action="@{/contact}"   method="post"  th:object="${dtoField}" class="was-validated" style="padding: 20px;margin: 10px">
         <div class="form-group">
             <label for="test">Username:</label>
-            <input type="text" class="form-control" id="test" name="test" placeholder="Enter username"  >
+            <input type="text" class="form-control"  th:field="*{name}" id="test" name="test" placeholder="Enter username"  >
+
+        </div>
+        <div class="form-group">
+            <label for="test">email:</label>
+            <input type="text" class="form-control"  th:field="*{email}"id="email" name="email" placeholder="Enter email"  >
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+<!--</div>-->
 </div>
-
-
-
 
 <footer th:insert="fragments/footer :: footer_fragment"></footer>
 </body>

@@ -18,15 +18,15 @@
 
 <div class="container p-3 my-3 bg-primary text-white">
   <h1>Index Page</h1>
-  <h3>My Strings</h3>
-  <div th:if="${StringList.isEmpty()}">
+  <div th:if="${contactDtoList.isEmpty()}">
     <p>
                Strings is Empty!
     </p>
   </div>
-  <div th:unless="${StringList.isEmpty()}">
-    <div th:each="myString : ${StringList}">
-      <p th:text="${myString}"></p>
+  <div th:unless="${contactDtoList.isEmpty()}">
+    <div th:each="dto : ${contactDtoList}">
+      <p th:text="${dto.name}"></p>
+      <p th:text="${dto.email}"></p>
     </div>
   </div>
 
